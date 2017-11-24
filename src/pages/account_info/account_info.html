@@ -1,0 +1,199 @@
+<ion-header>
+  <ion-navbar>
+    <!-- <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title>Account Info</ion-title>
+    <!-- <ion-buttons end class="cart_icon_btn">
+      <button ion-button icon-only>
+        <ion-icon name="">
+          <img width="27px" src="assets/img/my_cart.png">
+        </ion-icon>
+        <span>5</span>
+      </button>
+    </ion-buttons> -->
+
+    <ion-buttons end>
+       <button ion-button (click)="closeModal()">Close</button>
+    </ion-buttons>
+
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+<form   #accountForm="ngForm">
+
+<div class="account-info-detail-form">
+  <ion-list inset>
+
+   <h4 class="head-feilds">First Name</h4>
+
+    <ion-item>
+        <ion-input [(ngModel)]="account.FIRSTNAME" type="text" value="" placeholder="Firstname" name="FIRSTNAME" #FIRSTNAME="ngModel" spellcheck="false" autocapitalize="off"required></ion-input>
+   </ion-item>
+
+
+
+   <h4 class="head-feilds">Last Name</h4>
+    <ion-item>
+      <ion-input type="text" placeholder="Lastname" [(ngModel)]="account.LASTNAME" name="LASTNAME" #LASTNAME="ngModel" spellcheck="false" autocapitalize="off"required></ion-input>
+   </ion-item>
+
+<!--     <h4 class="head-feilds">User Name</h4>
+    <ion-item>
+          <ion-input [(ngModel)]="account.USERNAME" name="USERNAME" type="email" #USERNAME="ngModel" spellcheck="false" autocapitalize="off"required placeholder="Username" disabled="true"></ion-input>
+    </ion-item> -->
+
+  <h4 class="head-feilds">Mobile Number</h4>
+  <ion-item>
+    <ion-input type="text" placeholder="Mobile Number" name="HPHONE"
+     [(ngModel)]="account.HPHONE" #HPHONE="ngModel" spellcheck="false" autocapitalize="off"required></ion-input>
+  </ion-item>
+
+  <h4 class="head-feilds">Email Id</h4>
+
+  <ion-item>
+      <ion-input type="email"  placeholder="Email"  [(ngModel)]="account.USERNAME" name="USERNAME" type="email" #USERNAME="ngModel" spellcheck="false" autocapitalize="off"required >
+       </ion-input>
+  </ion-item>
+   <h4 class="head-feilds">Select Gender</h4>
+   <ion-item>
+    <ion-label>Gender</ion-label>
+    <ion-select name="GENDER"
+     [(ngModel)]="account.GENDER" #GENDER="ngModel" required>
+      <ion-option value="Male">Male</ion-option>
+      <ion-option value="Female">Female</ion-option>
+    </ion-select>
+ 
+  </ion-item>
+  <h4 class="head-feilds">Date of Birth</h4>
+  <ion-item>
+      <ion-datetime  placeholder="Date of birth"  name="DOB"
+     [(ngModel)]="account.DOB" #DOB="ngModel" spellcheck="false" autocapitalize="off"required >
+       </ion-datetime>
+  </ion-item>
+  
+  <h4 class="head-feilds">Address</h4>
+  <ion-item class="adresss"> 
+    <ion-input style="height: 100px;" type="text" placeholder="Location" name="BILLTOADDR"
+     [(ngModel)]="account.BILLTOADDR" #BILLTOADDR="ngModel" spellcheck="false" autocapitalize="off"required></ion-input>
+  </ion-item>
+
+  <h4 class="head-feilds">Shipping Address</h4>
+  <ion-item class="adresss">
+    <ion-input style="height: 100px;"  type="text" placeholder="Shpping Address" name="SHIPTOADDR"
+     [(ngModel)]="account.SHIPTOADDR" #SHIPTOADDR="ngModel" spellcheck="false" autocapitalize="off"></ion-input>
+  </ion-item>
+
+
+    <ion-item>
+    <ion-label>Area</ion-label>
+    <ion-select name="regLocation"
+     [(ngModel)]="account.regLocation" #regLocation="ngModel" required>
+
+      <ion-option value="Iganmu">Iganmu</ion-option>
+      <ion-option value="Kosofe">Kosofe</ion-option>
+      <ion-option value="Abraham Adesany">Abraham Adesany</ion-option>
+      <ion-option value="Festac Town">Festac Town</ion-option>
+      <ion-option value="Oworonshoki">Oworonshoki</ion-option>
+      <ion-option value="Ajah">Ajah</ion-option>
+      <ion-option value="VGC">VGC</ion-option>
+      <ion-option value="Bariga">Bariga</ion-option>
+      <ion-option value="Obanikoro">Obanikoro</ion-option>
+      <ion-option value="Yaba">Yaba</ion-option>
+      <ion-option value="Iwaya">Iwaya</ion-option>
+      <ion-option value="Surulere">Surulere</ion-option>
+      <ion-option value="Chevron">Chevron</ion-option>
+      <ion-option value="Ajeromi-Ifelodu">Ajeromi-Ifelodu</ion-option>
+      <ion-option value="Tejuosho">Tejuosho</ion-option>
+      <ion-option value="Apapa">Apapa</ion-option>
+      <ion-option value="Lekki Phase 1">Lekki Phase 1</ion-option>
+      <ion-option value="Lagos Island">Lagos Island</ion-option>
+      <ion-option value="Ikoyi">Ikoyi</ion-option>
+      <ion-option value="Victoria Island">Victoria Island</ion-option>
+      <ion-option value="Isolo">Isolo</ion-option>
+      <ion-option value="Maryland">Maryland</ion-option>
+      <ion-option value="Oshodi">Oshodi</ion-option>
+      <ion-option value="Somolu">Somolu</ion-option>
+      <ion-option value="Navy Town Barracks">Navy Town Barracks</ion-option>
+      <ion-option value="Ogudu">Ogudu</ion-option>
+      <ion-option value="Onigbongbo">Onigbongbo</ion-option>
+      <ion-option value="Anthony Village">Anthony Village</ion-option>
+      <ion-option value="Mile 2">Mile 2</ion-option>
+      <ion-option value="Alapere">Alapere</ion-option>
+      <ion-option value="Ilupeju">Ilupeju</ion-option>
+      <ion-option value="Ketu">Ketu</ion-option>
+      <ion-option value="Onipanu">Onipanu</ion-option>
+      <ion-option value="Mile 12">Mile 12</ion-option>
+      <ion-option value="Sangotedo">Sangotedo</ion-option>
+      <ion-option value="Amuwo Odofin">Amuwo Odofin</ion-option>
+      <ion-option value="Ikeja">Ikeja</ion-option>
+      <ion-option value="Jakande">Jakande</ion-option>
+      <ion-option value="Ejigbo">Ejigbo</ion-option>
+      <ion-option value="Ojodu Berger">Ojodu Berger</ion-option>
+      <ion-option value="Ojodu">Ojodu</ion-option>
+      <ion-option value="Iyana Ipaja">Iyana Ipaja</ion-option>
+      <ion-option value="Ojo">Ojo</ion-option>
+      <ion-option value="Orile Agege">Orile Agege</ion-option>
+      <ion-option value="Ijegun">Ijegun</ion-option>
+      <ion-option value="Akowonjo">Akowonjo</ion-option>
+      <ion-option value="Idimu">Idimu</ion-option>
+      <ion-option value="Ikorodu">Ikorodu</ion-option>
+      <ion-option value="Alagbado">Alagbado</ion-option>
+      <ion-option value="Alimosho">Alimosho</ion-option>
+      <ion-option value="Ifako-Ijaiye">Ifako-Ijaiye</ion-option>
+      <ion-option value="Ojokoro">Ojokoro</ion-option>
+      <ion-option value="Sango Ota">Sango Ota</ion-option>
+    </ion-select>
+ 
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>State</ion-label>
+    <ion-select name="STATE"
+     [(ngModel)]="account.STATE" #STATE="ngModel" required>
+      <ion-option value="Lagos">Lagos</ion-option>
+      <ion-option value="Nevada">Nevada</ion-option>
+      <ion-option value="Montana">Montana</ion-option>  
+      <ion-option value="Nebraska">Nebraska</ion-option>
+      <ion-option value="Nebraska">Nebraska</ion-option>  
+      <ion-option value="Maine">Maine</ion-option>
+      <ion-option value="Arizona">Arizona</ion-option>  
+      <ion-option value="Wisconsin">Wisconsin</ion-option>
+      <ion-option value="Mississippi">Mississippi</ion-option>  
+      <ion-option value="Texas">Texas</ion-option>
+      <ion-option value="California">California</ion-option> 
+    </ion-select>
+ 
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Country</ion-label>
+    <ion-select name="country"
+     [(ngModel)]="account.country" #country="ngModel" required>
+      <ion-option value="Nigeria">Nigeria</ion-option>
+      <ion-option value="Other">Other</ion-option>
+    </ion-select>
+ 
+  </ion-item>
+
+
+
+
+
+
+</ion-list>
+
+</div>
+
+
+  <div class="done-btn" padding>
+    <button  block class="signin-btn" [disabled]="!accountForm.form.valid" (click)="accountFun()" type="submit">Submit</button>
+  </div>
+
+</form>
+</ion-content>

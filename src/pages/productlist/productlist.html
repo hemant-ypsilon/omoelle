@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Product List</ion-title>
+    
+    <ion-buttons end class="cart_icon_btn" (click)='movetosuMycart()'>
+      <button ion-button icon-only>
+        <ion-icon name="">
+          <img width="27px" src="assets/img/my_cart.png">
+        </ion-icon>
+        <span>{{ totalItm && totalItm.length > 0 ? totalItm : 0 }}</span>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end class="cart_icon_btn" (click)='openModal($event)'>
+      <button ion-button icon-only>
+        <ion-icon name="funnel">
+          
+        </ion-icon>
+        
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<div class="product-list">
+  <ion-list>
+
+    <ion-item *ngFor="let product of productList">
+      <ion-thumbnail item-start>
+        <img height="100%" width="100%" src="{{product.productImage ? 'http://omoelle.com/admin/pics/'+product.productImage : 'assets/img/default_img.png' }}">
+      </ion-thumbnail>
+      <h2 (click)="movetoproductdetail(product.Id)">{{product.productName}}</h2>
+      <p>&#8358; {{product.price ? product.price : 00}}</p>
+      <button ion-button clear (click)="addToCart(product.Id, product.BestSeller, product.productId, product.productName, product.product_code, product.productDetails, product.productShortdesc,product.productImage,product.sellerId, product.Date,product.stock, product.isReturnable, product.catId, product.brandId, product.subCatId, product.price, product.weight)" >Add to Cart</button>
+    </ion-item>
+
+    <!-- <ion-item   *ngIf="prodductListShow == false">
+      <h2>Product not found!</h2>
+    </ion-item> -->
+
+    <!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+
+
+    
+</ion-list>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+
+
+</div>
+</ion-content>

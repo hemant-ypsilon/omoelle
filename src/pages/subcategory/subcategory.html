@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Category</ion-title>
+    <ion-buttons end class="cart_icon_btn" (click)='movetosuMycart()'>
+      <button ion-button icon-only>
+        <ion-icon name="">
+          <img width="27px" src="assets/img/my_cart.png">
+        </ion-icon>
+        <span>{{ totalItm && totalItm.length > 0 ? totalItm : 0 }}</span>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+ 
+<div class="main-category-box" padding>
+
+  <div (click)='productlists(subcategorty.Id)' class="category" *ngFor="let subcategorty of subCategories">
+    <img src="assets/img/BBandCream.png">
+    <h4>{{ subcategorty.subCatName }}</h4>
+  </div>
+
+ <!--  <div class="category">
+    <img src="assets/img/lipcare.png">
+    <h4>Lipcare</h4>
+  </div>
+
+  <div class="category">
+    <img src="assets/img/face.png">
+    <h4>Face</h4>
+  </div>
+  <div class="category">
+    <img src="assets/img/haircare.png">
+    <h4>Haircare</h4>
+  </div>
+  <div class="category">
+    <img src="assets/img/cleaner.png">
+    <h4>Cleaner</h4>
+  </div> -->
+ 
+</div>
+</ion-content>

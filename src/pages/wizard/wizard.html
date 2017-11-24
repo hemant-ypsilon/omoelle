@@ -1,0 +1,765 @@
+
+
+<!--
+   Generated template for the WizardPage page.
+   
+   See http://ionicframework.com/docs/components/#navigation for more info on
+   Ionic pages and navigation.
+   -->
+<ion-header>
+   <ion-navbar>
+      <ion-title>Merchant Form</ion-title>
+   </ion-navbar>
+</ion-header>
+<ion-content padding>
+   <ion-simple-wizard [(step)]="step" [showSteps]="true" (finish)="isOnFinalStep()" [finishIcon]="'done-all'" [(stepCondition)]="stepCondition">
+
+<!--     <ion-wizard-step>
+      <ion-card class="card-wizard">
+        <ion-icon class="card-wizard-icon" name="ionic" color="primary"></ion-icon>
+        <ion-card-content>
+          <ion-card-title>
+            Ionic 2 Simple Conditional Wizard
+          </ion-card-title>
+          <button ion-button outline (click)="goToExample2()">Dynamics Steps Example</button>
+          <p>
+            Simple component to handle conditionals steps wizard in ionic 2. This is the first step.
+          </p>
+          <button ion-button outline (click)="toggle()">Press to Continue</button>
+        </ion-card-content>
+      </ion-card>
+    </ion-wizard-step>
+
+
+    <ion-wizard-step>
+      <ion-card class="card-wizard">
+        <ion-icon class="card-wizard-icon" [name]="getIconStep2()" color="primary"></ion-icon>
+        <ion-card-content>
+          <ion-card-title>
+            Conditions
+          </ion-card-title>
+          <p>
+            Manage the next step condition of the wizard however you want
+            <ion-list>
+              <ion-item>
+                <ion-input (input)="textChange($event)" type="text" placeholder="Edit to continue"></ion-input>
+              </ion-item>
+            </ion-list>
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-wizard-step>
+
+    <ion-wizard-step>
+      <ion-card class="card-wizard">
+        <ion-icon class="card-wizard-icon" [name]="getIconStep3()" color="primary"></ion-icon>
+        <ion-card-content>
+          <ion-card-title>
+            Final Step
+          </ion-card-title>
+          <p>
+            You can change the step animation , the button animation, show or hide the step counter and more.<br>Please go to the
+            <a
+              href="https://github.com/JoxieMedina/ionic2-simple-conditional-wizard" target="_blank">documentation</a> for more details and options. <br>Like it to finish the wizard.
+          </p>
+          <button ion-button outline icon-right (click)="toggle()">
+              {{stepCondition?'Dislike':'Like'}}
+            <ion-icon [name]="getLikeIcon()"></ion-icon>
+            </button>
+        </ion-card-content>
+      </ion-card>
+</ion-wizard-step> -->
+
+   <ion-wizard-step>
+      <div class="account-info-detail-form">
+         <ion-list inset>
+            <h4 style="color:#eb429f;">Personal detail</h4>
+            <h4 class="head-feilds">Merchant Name</h4>
+
+            <ion-item>
+               <ion-input type="text" placeholder="Ex.john" name="ContactPerson" [(ngModel)]="merchant.ContactPerson"  #ContactPerson="ngModel" spellcheck="false" autocapitalize="off" (input)="textChange($event, 'name')"  required></ion-input>
+            </ion-item>
+
+            <h4 class="head-feilds">Incorporated Name<small style="color: gray;">(if different from Merchant Name)</small></h4>
+            <ion-item>
+
+               <ion-input type="text" placeholder="Ex.john" name="Secondary_Contact_Person" spellcheck="false" autocapitalize="off" required [(ngModel)]="merchant.Secondary_Contact_Person"  #Secondary_Contact_Person="ngModel"></ion-input>
+
+            </ion-item>
+            <h4 class="head-feilds">RC Number</h4>
+            <ion-item>
+
+               <ion-input type="text" placeholder="RC Number" name="RC_Number" spellcheck="false" autocapitalize="off" required [(ngModel)]="merchant.RC_Number" (input)="textChange($event, 'rc')"  #RC_Number="ngModel"></ion-input>
+
+            </ion-item>
+
+            <h4 class="head-feilds">Name of Business Owner</h4>
+            <ion-item>
+               <ion-input type="text" placeholder="Name of Business Owner" name="BusinessName" spellcheck="false" autocapitalize="off" required [(ngModel)]="merchant.BusinessName"  #BusinessName="ngModel" (input)="textChange($event, 'business')"></ion-input>
+            </ion-item>
+
+            <h4 class="head-feilds">Address</h4>
+            <ion-item>
+               <ion-input style="height: 100px;" type="text" placeholder="Address" name="RegisteredAddress" spellcheck="false" autocapitalize="off" required [(ngModel)]="merchant.RegisteredAddress"  #RegisteredAddress="ngModel" (input)="textChange($event, 'address')"></ion-input>
+            </ion-item>
+
+         </ion-list>
+         <div style="height: 100px;"></div>
+      </div>
+   </ion-wizard-step>
+   <ion-wizard-step>
+      <div class="account-info-detail-form">
+         <ion-list inset>
+            <h4 class="head-feilds">Other Address<small style="color: gray;">(if Any)</small></h4>
+            <ion-item class="adresss">
+
+               <ion-input style="height: 100px;" type="text" placeholder="Address" name="Other_Address" spellcheck="false" autocapitalize="off" required [(ngModel)]="merchant.Other_Address"  #Other_Address="ngModel"></ion-input>
+
+            </ion-item> 
+            <ion-grid>
+               <ion-row>
+                  <ion-col col-6>
+                     <h4 class="head-feilds">Gender</h4>
+                     <ion-select name="gender" required [(ngModel)]="merchant.gender"  #gender="ngModel">
+                        <ion-option value="male">Male</ion-option>
+                        <ion-option value="famle">Female</ion-option>
+                        <ion-option value="other">Other</ion-option>
+                     </ion-select>
+                  </ion-col>
+                  <ion-col col-6>
+                     <h4 class="head-feilds">City</h4>
+                     <ion-select name="city" required [(ngModel)]="merchant.city"  #city="ngModel">
+                           <ion-option value="Iganmu">Iganmu</ion-option>
+                           <ion-option value="Kosofe">Kosofe</ion-option>
+                           <ion-option value="Abraham Adesany">Abraham Adesany</ion-option>
+                           <ion-option value="Festac Town">Festac Town</ion-option>
+                           <ion-option value="Oworonshoki">Oworonshoki</ion-option>
+                           <ion-option value="Ajah">Ajah</ion-option>
+                           <ion-option value="VGC">VGC</ion-option>
+                           <ion-option value="Bariga">Bariga</ion-option>
+                           <ion-option value="Obanikoro">Obanikoro</ion-option>
+                           <ion-option value="Yaba">Yaba</ion-option>
+                           <ion-option value="Iwaya">Iwaya</ion-option>
+                           <ion-option value="Surulere">Surulere</ion-option>
+                           <ion-option value="Chevron">Chevron</ion-option>
+                           <ion-option value="Ajeromi-Ifelodu">Ajeromi-Ifelodu</ion-option>
+                           <ion-option value="Tejuosho">Tejuosho</ion-option>
+                           <ion-option value="Apapa">Apapa</ion-option>
+                           <ion-option value="Lekki Phase 1">Lekki Phase 1</ion-option>
+                           <ion-option value="Lagos Island">Lagos Island</ion-option>
+                           <ion-option value="Ikoyi">Ikoyi</ion-option>
+                           <ion-option value="Victoria Island">Victoria Island</ion-option>
+                           <ion-option value="Isolo">Isolo</ion-option>
+                           <ion-option value="Maryland">Maryland</ion-option>
+                           <ion-option value="Oshodi">Oshodi</ion-option>
+                           <ion-option value="Somolu">Somolu</ion-option>
+                           <ion-option value="Navy Town Barracks">Navy Town Barracks</ion-option>
+                           <ion-option value="Ogudu">Ogudu</ion-option>
+                           <ion-option value="Onigbongbo">Onigbongbo</ion-option>
+                           <ion-option value="Anthony Village">Anthony Village</ion-option>
+                           <ion-option value="Mile 2">Mile 2</ion-option>
+                           <ion-option value="Alapere">Alapere</ion-option>
+                           <ion-option value="Ilupeju">Ilupeju</ion-option>
+                           <ion-option value="Ketu">Ketu</ion-option>
+                           <ion-option value="Onipanu">Onipanu</ion-option>
+                           <ion-option value="Mile 12">Mile 12</ion-option>
+                           <ion-option value="Sangotedo">Sangotedo</ion-option>
+                           <ion-option value="Amuwo Odofin">Amuwo Odofin</ion-option>
+                           <ion-option value="Ikeja">Ikeja</ion-option>
+                           <ion-option value="Jakande">Jakande</ion-option>
+                           <ion-option value="Ejigbo">Ejigbo</ion-option>
+                           <ion-option value="Ojodu Berger">Ojodu Berger</ion-option>
+                           <ion-option value="Ojodu">Ojodu</ion-option>
+                           <ion-option value="Iyana Ipaja">Iyana Ipaja</ion-option>
+                           <ion-option value="Ojo">Ojo</ion-option>
+                           <ion-option value="Orile Agege">Orile Agege</ion-option>
+                           <ion-option value="Ijegun">Ijegun</ion-option>
+                           <ion-option value="Akowonjo">Akowonjo</ion-option>
+                           <ion-option value="Idimu">Idimu</ion-option>
+                           <ion-option value="Ikorodu">Ikorodu</ion-option>
+                           <ion-option value="Alagbado">Alagbado</ion-option>
+                           <ion-option value="Alimosho">Alimosho</ion-option>
+                           <ion-option value="Ifako-Ijaiye">Ifako-Ijaiye</ion-option>
+                           <ion-option value="Ojokoro">Ojokoro</ion-option>
+                           <ion-option value="Sango Ota">Sango Ota</ion-option>
+                     </ion-select>
+                  </ion-col>
+               </ion-row>
+            </ion-grid>
+            <h4 class="head-feilds">Web Address</h4>
+            <ion-item class="Web Address">
+
+               <ion-input type="text" placeholder="Ex. www.xyz.com" name="Website" spellcheck="false" autocapitalize="off" required [(ngModel)]="merchant.Website"  #Website="ngModel"></ion-input>
+
+            </ion-item>
+            <h4 class="head-feilds">Business E-mail</h4>
+            <ion-item class="Web Address">
+               <ion-input type="text" placeholder="Ex. info@xyz.com" name="email" spellcheck="false" autocapitalize="off" required [(ngModel)]="merchant.email"  #email="ngModel"></ion-input>
+            </ion-item>
+            <ion-grid>
+               <ion-row>
+                  <ion-col col-6>
+                     <h4 class="head-feilds">Business Telephone</h4>
+
+                     <ion-input style="border: 1px solid #ddd;border-radius: 3px;" type="text" placeholder="Ex. 012 2345 678" name="PhoneNumber" spellcheck="false" autocapitalize="off" required [(ngModel)]="merchant.PhoneNumber"  #PhoneNumber="ngModel"></ion-input>
+
+                  </ion-col>
+                  <ion-col col-6>
+                     <h4 class="head-feilds">Mobile Number</h4>
+
+                     <ion-input style="border: 1px solid #ddd;border-radius: 3px;" type="text" placeholder="Ex. 09090909090" name="Mobile" spellcheck="false" autocapitalize="off" required [(ngModel)]="merchant.Mobile"  #Mobile="ngModel"></ion-input>
+
+                  </ion-col>
+               </ion-row>
+            </ion-grid>
+         </ion-list>
+      </div>
+   </ion-wizard-step>
+   <ion-wizard-step>
+      <div class="account-info-detail-form">
+         <ion-list inset>
+            <h4 style="color:#eb429f;">Secondary Person Detail</h4>
+            <h4 class="head-feilds">Name of Secondary Contact Person</h4>
+            <ion-item class="Web Address">
+
+               <ion-input type="text" placeholder="Ex. Rechard" name="Secondary_Contact_Person" spellcheck="false" autocapitalize="off" required [(ngModel)]="merchant.Secondary_Contact_Person"  #Secondary_Contact_Person="ngModel"></ion-input>
+
+            </ion-item>
+            <h4 class="head-feilds">Designation</h4>
+            <ion-item class="Web Address">
+
+               <ion-input type="text" placeholder="Ex. Web Developer" name="Secondary_Designation" spellcheck="false" autocapitalize="off" required [(ngModel)]="merchant.Secondary_Designation"  #Secondary_Designation="ngModel"></ion-input>
+
+            </ion-item>
+            <h4 class="head-feilds">Email</h4>
+            <ion-item class="Web Address">
+
+               <ion-input type="text" placeholder="Ex. Demo@email.com" name="Secondary_Email" spellcheck="false" autocapitalize="off" required [(ngModel)]="merchant.Secondary_Email"  #Secondary_Email="ngModel"></ion-input>
+
+            </ion-item>
+            <h4 class="head-feilds">Mobile Number</h4>
+            <ion-item class="Web Address">
+
+               <ion-input type="text" placeholder="Ex. 09090909090" name="Secondary_Phone" spellcheck="false" autocapitalize="off" required [(ngModel)]="merchant.Secondary_Phone"  #Secondary_Phone="ngModel"></ion-input>
+
+            </ion-item>
+         </ion-list>
+      </div>
+   </ion-wizard-step>
+   <ion-wizard-step>
+      <div class="account-info-detail-form">
+         <ion-list inset>
+            <h4 style="color:#eb429f;">Questionnaires</h4>
+            <p>Note: you are required to answer questions that are applicable to your company situation, please tick or state N/A (not applicable) where applicable. </p>
+            <h4 class="head-feilds">1. Is the nature of your business related to the under-listed</h4>
+
+            <div class="q-ans-select">
+             <ion-item *ngFor="let t of nature1;">
+                  <h2><span>{{t.name}}</span></h2>
+                  <label>
+                      <input color="dark" type="checkbox" value="{{t}}" [checked]="t.checked" (change)="updateNature(t.name, $event)" />
+                  </label>
+              </ion-item>
+            </div>
+
+            <br>
+
+            <h4 class="head-feilds">Other</h4>
+
+            <ion-item class="Web Address">
+               <ion-input type="text" placeholder="Type here" spellcheck="false" autocapitalize="off" [(ngModel)]="merchant.other_nature_of_business"  #other_nature_of_business="ngModel" name="other_nature_of_business" ></ion-input>
+            </ion-item>
+
+         </ion-list>
+      </div>
+   </ion-wizard-step>
+   <ion-wizard-step>
+      <div class="account-info-detail-form">
+         <ion-list inset>
+            <h4 class="head-feilds">2. What is the model of your business?</h4>
+            <div class="q-ans-radio">
+               <ion-list radio-group  [(ngModel)]="merchant.model_of_business"  #model_of_business="ngModel" name="model_of_business">
+                  <ion-item>
+                     <ion-label>Retailer</ion-label>
+                        <ion-radio value="Retailer" checked ></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>Manufacturer</ion-label>
+                     <ion-radio value="Manufacturer"></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>Wholesaler</ion-label>
+                     <ion-radio value="Wholesaler"></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>Hair and Beauty</ion-label>
+                     <ion-radio value="Hair and Beauty"></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>Wholesaler</ion-label>
+                     <ion-radio value="Wholesaler"></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>Accredited Distributor</ion-label>
+                     <ion-radio value="Accredited Distributor"></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>Imported</ion-label>
+                     <ion-radio value="Imported"></ion-radio>
+                  </ion-item>
+               </ion-list>
+            </div>
+            <br>
+            <h4 class="head-feilds">Other</h4>
+            <ion-item class="Web Address">
+               <ion-input type="text" placeholder="Type here" name="model_of_business" spellcheck="false" autocapitalize="off" [(ngModel)]="merchant.other_model_of_business"  #other_model_of_business="ngModel" name="other_model_of_business"></ion-input>
+            </ion-item>
+         </ion-list>
+      </div>
+   </ion-wizard-step>
+   <ion-wizard-step>
+      <div class="account-info-detail-form">
+         <ion-list inset>
+            <h4 class="head-feilds">3. Does your product/services have a spread and distribution all over Nigeria?</h4>
+            <div class="q-ans-radio">
+               <ion-list radio-group  [(ngModel)]="merchant.distribution_all_over_Nigeria"  #distribution_all_over_Nigeria="ngModel" name="distribution_all_over_Nigeria">
+                  <ion-item>
+                     <ion-label>Yes</ion-label>
+                     <ion-radio value="yes" checked></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>No</ion-label>
+                     <ion-radio value="no"></ion-radio>
+                  </ion-item>
+               </ion-list>
+            </div>
+            <h4 class="head-feilds">4. What are the distinguishing feature/unique selling points that differentiate your products/services from competitors?<small>(please denote briefly)</small></h4>
+
+            <ion-item>
+               <ion-input style="height: 100px;" type="text" placeholder="Description" name="distinguishing_description" spellcheck="false" autocapitalize="off" required [(ngModel)]="merchant.distinguishing_description"  #distinguishing_description="ngModel"></ion-input>
+            </ion-item>
+
+         </ion-list>
+      </div>
+   </ion-wizard-step>
+   <ion-wizard-step>
+      <br>
+      <h4 class="head-feilds"> Please provide a listing of products/services you offer to your customers.</h4>
+      <ion-grid>
+
+            <div *ngFor="let pro of productlist; let i = index; ">
+               <input class="custom_input" style="" type="text" placeholder="Product {{++i}}" name="service_offer" spellcheck="false" required value="{{pro.name}}"  (change)="service_offer($event.target.value)" />
+            </div>
+
+        <!--  <ion-row>
+            <ion-col col-6>
+               <ion-input style="border: 1px solid #ddd;border-radius: 3px;" type="text" placeholder="Product 1" name="service_offer" spellcheck="false" required  (change)="service_offer($event.target.value)" ></ion-input>
+            </ion-col>
+
+            <ion-col col-6>
+               <ion-input style="border: 1px solid #ddd;border-radius: 3px;" type="text" placeholder="Product 2" name="service_offer" spellcheck="false" autocapitalize="off"  (change)="service_offer($event.target.value)"></ion-input>
+            </ion-col>
+         </ion-row>
+         <ion-row>
+            <ion-col col-6>
+               <ion-input style="border: 1px solid #ddd;border-radius: 3px;" type="text" placeholder="Product 3" name="service_offer" spellcheck="false" autocapitalize="off"  (change)="service_offer($event.target.value)"></ion-input>
+            </ion-col>
+            <ion-col col-6>
+               <ion-input style="border: 1px solid #ddd;border-radius: 3px;" type="text" placeholder="Product 4" name="service_offer" spellcheck="false" autocapitalize="off" (change)="service_offer($event.target.value)"></ion-input>
+            </ion-col>
+         </ion-row>
+         <ion-row>
+            <ion-col col-6>
+               <ion-input style="border: 1px solid #ddd;border-radius: 3px;" type="text" placeholder="Product 5" name="service_offer" spellcheck="false" autocapitalize="off"  (change)="service_offer($event.target.value)"></ion-input>
+            </ion-col>
+            <ion-col col-6>
+               <ion-input style="border: 1px solid #ddd;border-radius: 3px;" type="text" placeholder="Product 6" name="service_offer" spellcheck="false" autocapitalize="off"  (change)="service_offer($event.target.value)"></ion-input>
+            </ion-col>
+         </ion-row> -->
+
+      </ion-grid>
+   </ion-wizard-step>
+
+   <ion-wizard-step>
+      <div class="account-info-detail-form">
+         <ion-list inset>
+            <h4 class="head-feilds">5. Has your business been registered on any website/portal?</h4>
+            <div class="q-ans-radio">
+               <ion-list radio-group  [(ngModel)]="merchant.business_registered"  #business_registered="ngModel" name="business_registered">
+                  <ion-item>
+                     <ion-label>Yes</ion-label>
+                     <ion-radio value="yes" checked></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>No</ion-label>
+                     <ion-radio value="no"></ion-radio>
+                  </ion-item>
+               </ion-list>
+            </div>
+            <h4 class="head-feilds"><small>(If yes, please state)</small></h4>
+            <div class="q-ans-radio">
+               <ion-list>
+                  <ion-item>
+                     <ion-input  type="text" placeholder="" name="business_registered_if_yes" spellcheck="false" autocapitalize="off" [(ngModel)]="merchant.business_registered_if_yes"  #business_registered_if_yes="ngModel"></ion-input>
+                  </ion-item>
+               </ion-list>
+            </div>
+            <h4 class="head-feilds">6. Do you have access to internet connection?</h4>
+            <div class="q-ans-radio">
+               <ion-list radio-group  [(ngModel)]="merchant.is_internet_connection"  #is_internet_connection="ngModel" name="is_internet_connection">
+                  <ion-item>
+                     <ion-label>Yes</ion-label>
+                     <ion-radio value="yes" checked></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>No</ion-label>
+                     <ion-radio value="no"></ion-radio>
+                  </ion-item>
+               </ion-list>
+            </div>
+         </ion-list>
+      </div>
+   </ion-wizard-step>
+   <ion-wizard-step>
+      <div class="account-info-detail-form">
+         <ion-list inset>
+            <h4 class="head-feilds">7. Which of these information technology infrastructures does your business have?</h4>
+            <div class="q-ans-select">
+
+               <ion-item *ngFor="let t of infrastructures1;">
+                  <h2><span>{{t.name}}</span></h2>
+                  <label>
+                      <input color="dark" type="checkbox" value="{{t}}" [checked]="t.checked" (change)="updateInfra(t.name, $event)" />
+                  </label>
+              </ion-item>
+
+             <!--   <ion-item>
+                  <ion-label>Smart phone</ion-label>
+                  <ion-checkbox color="dark" checked="false" value="Smart phone" [(ngModel)]="merchant.information_technology_infrastructures"  #information_technology_infrastructures="ngModel" name="information_technology_infrastructures"></ion-checkbox>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Laptop</ion-label>
+                  <ion-checkbox color="dark" checked="false" value="Laptop" [(ngModel)]="merchant.information_technology_infrastructures"  #information_technology_infrastructures="ngModel" name="information_technology_infrastructures"></ion-checkbox>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Computer</ion-label>
+                  <ion-checkbox color="dark" checked="false" value="Computer" [(ngModel)]="merchant.information_technology_infrastructures"  #information_technology_infrastructures="ngModel" name="information_technology_infrastructures"></ion-checkbox>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Tablet</ion-label>
+                  <ion-checkbox color="dark" checked="false" value="Tablet" [(ngModel)]="merchant.information_technology_infrastructures"  #information_technology_infrastructures="ngModel" name="information_technology_infrastructures"></ion-checkbox>
+               </ion-item> -->
+            </div>
+            <h4 class="head-feilds">8. How do your customers pay?</h4>
+            <div class="q-ans-select">
+
+                  <ion-item *ngFor="let t of customerspay1;">
+                     <h2><span>{{t.name}}</span></h2>
+                     <label>
+                         <input color="dark" type="checkbox" value="{{t}}" [checked]="t.checked" (change)="updateCustomer(t.name, $event)" />
+                     </label>
+                 </ion-item>
+
+                  <!-- <ion-label>Cash Sales</ion-label>
+                  <ion-checkbox color="dark" checked="true" value="Cash Sales" [(ngModel)]="merchant.customers_pay"  #customers_pay="ngModel" name="customers_pay[]"></ion-checkbox>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Cheque</ion-label>
+                  <ion-checkbox color="dark" checked="false" value="Cheque" [(ngModel)]="merchant.customers_pay"  #customers_pay="ngModel" name="customers_pay[]"></ion-checkbox>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Point of Sale Terminal</ion-label>
+                  <ion-checkbox color="dark" checked="false" value="Point of Sale Terminal" [(ngModel)]="merchant.customers_pay"  #customers_pay="ngModel" name="customers_pay[]"></ion-checkbox>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Internet Payment System</ion-label>
+                  false
+                  <ion-checkbox color="dark" checked="" value="Internet Payment System" [(ngModel)]="merchant.customers_pay"  #customers_pay="ngModel" name="customers_pay[]"></ion-checkbox>
+               </ion-item> -->
+            </div>
+         </ion-list>
+      </div>
+   </ion-wizard-step>
+
+   <ion-wizard-step>
+      <div class="account-info-detail-form">
+         <ion-list inset>
+            <h4 class="head-feilds">10. Does your company have a website address or partial presence on the internet by way of the following?</h4>
+            <div class="q-ans-select">
+
+               <ion-item *ngFor="let t of website1;">
+                     <h2><span>{{t.name}}</span></h2>
+                     <label>
+                         <input color="dark" type="checkbox" value="{{t}}" [checked]="t.checked" (change)="updateWebsite(t.name, $event)" />
+                     </label>
+                 </ion-item>
+
+
+               <!-- <ion-item>
+                  <ion-label>Corporate Web Address and Presence</ion-label>
+                   <ion-checkbox color="dark" checked="true" value="Corporate Web Address and Presence" [(ngModel)]="merchant.have_a_website"  #have_a_website="ngModel" name="have_a_website"></ion-checkbox>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Combination of both</ion-label>
+                  <ion-checkbox color="dark" checked="false" value="Combination of both" [(ngModel)]="merchant.have_a_website"  #have_a_website="ngModel" name="have_a_website"></ion-checkbox>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Social Network</ion-label>
+                  <ion-checkbox color="dark" checked="false" value="Social Network" [(ngModel)]="merchant.have_a_website"  #have_a_website="ngModel" name="have_a_website"></ion-checkbox>
+               </ion-item>
+               <ion-item>
+                  <ion-label>None</ion-label>
+                  false
+                  <ion-checkbox color="dark" checked="false" value="None" [(ngModel)]="merchant.have_a_website"  #have_a_website="ngModel" name="have_a_website"></ion-checkbox>
+               </ion-item> -->
+
+            </div>
+         </ion-list>
+      </div>
+   </ion-wizard-step>
+
+   <ion-wizard-step>
+      <div class="account-info-detail-form">
+      <br>
+      <h4 class="head-feilds">11.  How many people in your estimation or from tracked records visit your site monthly?<small>10. (Applicable to Merchant with web address)</small></h4>
+            <div class="q-ans-radio">
+               <ion-list radio-group  [(ngModel)]="merchant.visit_site_monthly"  #visit_site_monthly="ngModel" name="visit_site_monthly">
+                  <ion-item>
+                     <ion-label>Less than 1000</ion-label>
+                     <ion-radio checked value="Less than 1000"></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>Between 1000 - 5000</ion-label>
+                     <ion-radio value="Between 1000 - 5000"></ion-radio>
+                  </ion-item>
+                   <ion-item>
+                     <ion-label>Above 1000</ion-label>
+                     <ion-radio value="Above 1000"></ion-radio>
+                  </ion-item>
+               </ion-list>
+            </div> 
+      <h4 class="head-feilds"> 12. List the names of bank engaged by your company for its financial account/banking purpose</h4>
+      <ion-grid>
+
+
+             <div *ngFor="let bank of banklist; let i = index; ">
+               <input class="custom_input" style="" type="text" placeholder="Bank {{++i}}" name="names_of_bank" spellcheck="false" required value="{{bank.name}}"  (change)="bank_change($event.target.value)" />
+            </div>
+
+
+        <!--  <ion-row>
+            <ion-col col-6>
+                  <ion-input style="border: 1px solid #ddd;border-radius: 3px;" type="text" placeholder="" name="names_of_bank" spellcheck="false" autocapitalize="off" required (change)="bank_change($event.target.value)"></ion-input>
+            </ion-col>
+            <ion-col col-6>
+               <ion-input style="border: 1px solid #ddd;border-radius: 3px;" type="text" placeholder="" name="names_of_bank" spellcheck="false" autocapitalize="off" (change)="bank_change($event.target.value)">
+                  
+               </ion-input>
+            </ion-col>
+         </ion-row>
+         <ion-row>
+            <ion-col col-6>
+               <ion-input style="border: 1px solid #ddd;border-radius: 3px;" type="text" placeholder="" name="names_of_bank" spellcheck="false" autocapitalize="off" (change)="bank_change($event.target.value)"></ion-input>
+            </ion-col>
+            <ion-col col-6>
+               <ion-input style="border: 1px solid #ddd;border-radius: 3px;" type="text" placeholder="" name="names_of_bank" spellcheck="false" autocapitalize="off" (change)="bank_change($event.target.value)"></ion-input>
+            </ion-col>
+         </ion-row> -->
+
+      </ion-grid>
+      </div>
+   </ion-wizard-step>
+
+   <ion-wizard-step>
+   <div class="account-info-detail-form">
+   <br>
+      <h4 class="head-feilds">13. As part of the attraction to our price-sensitive customers, generous discount on price of your goods and services would be expected from you. How much 0f a discount would you be willing to offer?</h4>
+            <div class="q-ans-select">
+
+               <ion-item *ngFor="let t of discount1;">
+                     <h2><span>{{t.name}}</span></h2>
+                     <label>
+                         <input color="dark" type="checkbox" value="{{t}}" [checked]="t.checked" (change)="updateDiscount(t.name, $event)" />
+                     </label>
+                 </ion-item>
+
+              <!--  <ion-item>
+                  <ion-label>5% to 10%</ion-label>
+                  <ion-checkbox color="dark" checked="true" value="5% to 10%" [(ngModel)]="merchant.discount_offer"  #discount_offer="ngModel" name="discount_offer"></ion-checkbox>
+               </ion-item>
+               <ion-item>
+                  <ion-label>10% to 15%</ion-label>
+                  <ion-checkbox color="dark" checked="false" value="10% to 15%" [(ngModel)]="merchant.discount_offer"  #discount_offer="ngModel" name="discount_offer"></ion-checkbox>
+               </ion-item>
+               <ion-item>
+                  <ion-label>15% to 20%</ion-label>
+                  <ion-checkbox color="dark" checked="false" value="15% to 20%" [(ngModel)]="merchant.discount_offer"  #discount_offer="ngModel" name="discount_offer"></ion-checkbox>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Others</ion-label>
+                  false
+                  <ion-checkbox color="dark" checked="true" value="Others" [(ngModel)]="merchant.discount_offer"  #discount_offer="ngModel" name="discount_offer"></ion-checkbox>
+               </ion-item> -->
+
+            </div>
+      
+      <h4 class="head-feilds">14. Will you inform omoelle.com about changes in prices and discount from time to time?</h4>
+            <div class="q-ans-radio">
+               <ion-list radio-group  [(ngModel)]="merchant.inform_us"  #inform_us="ngModel" name="inform_us">
+                  <ion-item>
+                     <ion-label>Yes</ion-label>
+                     <ion-radio value="yes" checked></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>No</ion-label>
+                     <ion-radio value="no"></ion-radio>
+                  </ion-item>
+               </ion-list>
+            </div> 
+      </div>
+   </ion-wizard-step>
+
+   <ion-wizard-step>
+     <div class="account-info-detail-form">
+     <br>
+        <h4 class="head-feilds">15. For service provides with hair and beauty studios, would you be prepared to give immediately priority to clients who book appointments and pay online as soon as they enter your premise?</h4>
+            <div class="q-ans-radio">
+               <ion-list radio-group  [(ngModel)]="merchant.immediately_priority_to_clients"  #immediately_priority_to_clients="ngModel" name="immediately_priority_to_clients">
+                  <ion-item>
+                     <ion-label>Yes</ion-label>
+                     <ion-radio value="yes" checked></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>No</ion-label>
+                     <ion-radio value="no"></ion-radio>
+                  </ion-item>
+               </ion-list>
+            </div>
+            <h4 class="head-feilds"><small>(If yes, what would be your response to a defective product to which the customer is not completely satisfied?)</small></h4>
+            <div class="q-ans-radio">
+               <ion-list >
+                  <ion-item>
+                     <ion-input  type="text" placeholder="" name="immediately_priority_if_yes" spellcheck="false" autocapitalize="off" required [(ngModel)]="merchant.immediately_priority_if_yes"  #immediately_priority_if_yes="ngModel" name="immediately_priority_if_yes"></ion-input>
+                  </ion-item>
+               </ion-list>
+            </div>
+ 
+            
+     </div>
+   </ion-wizard-step>
+   <ion-wizard-step>
+     <div class="account-info-detail-form">
+        <br>
+
+            <h4 class="head-feilds">16. Can you give assurance of quality for the products/services provided on our platform?</h4>
+            <div class="q-ans-radio">
+               <ion-list radio-group  [(ngModel)]="merchant.give_assurance"  #give_assurance="ngModel" name="give_assurance">
+                  <ion-item>
+                     <ion-label>Yes</ion-label>
+                     <ion-radio value="yes" checked></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>No</ion-label>
+                     <ion-radio value="no"></ion-radio>
+                  </ion-item>
+               </ion-list>
+            </div>
+            <h4 class="head-feilds"><small>(If yes, what would be your response to a detective product to which the customer is not completely satisfied?)</small></h4>
+            <div class="q-ans-radio">
+               <ion-list>
+                  <ion-item>
+                     <ion-input  type="text" placeholder="" name="give_assurance_if_yes" spellcheck="false" autocapitalize="off" [(ngModel)]="merchant.give_assurance_if_yes"  #give_assurance_if_yes="ngModel"></ion-input>
+                  </ion-item>
+               </ion-list>
+            </div>
+     </div>
+   </ion-wizard-step>
+   <ion-wizard-step>
+      <div class="account-info-detail-form">
+         <ion-list inset>
+            <h4 class="head-feilds">17. What is your return policy? <small>(condition for returned goods/incomplete services)</small></h4>
+            <div class="q-ans-select">
+
+                <ion-item *ngFor="let t of return1;">
+                     <h2><span>{{t.name}}</span></h2>
+                     <label>
+                         <input color="dark" type="checkbox" value="{{t}}" [checked]="t.checked" (change)="updateReturn(t.name, $event)" />
+                     </label>
+                 </ion-item>
+
+
+               <!-- <ion-item>
+                  <ion-label>Not Aplicable</ion-label>
+                  <ion-checkbox color="dark" value="Not Aplicable" checked="true" [(ngModel)]="merchant.ReturnPolicy"  #ReturnPolicy="ngModel" name="ReturnPolicy"></ion-checkbox>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Return immediately</ion-label>
+                  <ion-checkbox color="dark" value="Return immediately" checked="false" [(ngModel)]="merchant.ReturnPolicy"  #ReturnPolicy="ngModel" name="ReturnPolicy"></ion-checkbox>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Exchange</ion-label>
+                  <ion-checkbox color="dark" value="Exchange" checked="false" [(ngModel)]="merchant.ReturnPolicy"  #ReturnPolicy="ngModel" name="ReturnPolicy"></ion-checkbox>
+               </ion-item>
+               <ion-item>
+                  <ion-label>Less than 3 day</ion-label>
+                  <ion-checkbox color="dark" value="Less than 3 day" checked="false" [(ngModel)]="merchant.ReturnPolicy"  #ReturnPolicy="ngModel" name="ReturnPolicy"></ion-checkbox>
+               </ion-item> -->
+
+            </div>
+
+            <h4 class="head-feilds">18. Are you willing to offer same day delivery to our designated officer upon receiving of payment/order from omoelle.com?</h4>
+            <div class="q-ans-radio">
+               <ion-list radio-group  [(ngModel)]="merchant.same_day_delivery"  #same_day_delivery="ngModel" name="same_day_delivery">
+                  <ion-item>
+                     <ion-label>Yes</ion-label>
+                     <ion-radio value="yes" checked ></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>No</ion-label>
+                     <ion-radio value="no"></ion-radio>
+                  </ion-item>
+               </ion-list>
+            </div>
+           
+            
+         </ion-list>
+      </div>
+   </ion-wizard-step>
+
+   <ion-wizard-step>
+      <div class="account-info-detail-form">
+         <ion-list inset>
+          <h4 class="head-feilds">18. Will you like to attend omoelle.com seminar/workshop?</h4>
+            <div class="q-ans-radio">
+               <ion-list radio-group  [(ngModel)]="merchant.attend_seminar"  #attend_seminar="ngModel" name="attend_seminar">
+                  <ion-item>
+                     <ion-label>Yes</ion-label>
+                     <ion-radio value="yes" checked ></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>No</ion-label>
+                     <ion-radio value="no"></ion-radio>
+                  </ion-item>
+               </ion-list>
+            </div>
+
+             <h4 class="head-feilds">19. Do you agree to prominently display the promotional materials provided by www.omoelle.com in your place(s) of business?<small> (our promotional materials shall be limited to informing the public about our brand)</small></h4>
+            <div class="q-ans-radio">
+               <ion-list radio-group  [(ngModel)]="merchant.promotional_materials"  #promotional_materials="ngModel" name="promotional_materials">
+                  <ion-item>
+                     <ion-label>Yes</ion-label>
+                     <ion-radio value="yes" checked></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                     <ion-label>No</ion-label>
+                     <ion-radio value="no"></ion-radio>
+                  </ion-item>
+               </ion-list>
+            </div>
+
+           </ion-list>
+      </div>
+   </ion-wizard-step>
+   </ion-simple-wizard>
+</ion-content>
+

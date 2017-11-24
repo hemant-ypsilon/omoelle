@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Order Details</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="product-details" padding >
+   <div class="header-orderhistory-detail">
+
+     <ion-grid>
+      <ion-row>
+        <ion-col col-6 class="left">
+          <p>Order Number</p>
+          <h4>{{sOrderId}}</h4>
+        </ion-col>
+
+        <ion-col col-6 class="right">
+          <p>Amount</p>
+          <h4>{{totalAmount}}</h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <p>{{date}} {{time}}</p>
+
+   </div>
+
+   <h4><strong>You have {{getLength}} item in your order!</strong></h4>
+
+   <div (click)="movetoproductdetail(order.Id)" class="products-in-order-box" *ngFor="let order of orderDetail">
+     <ion-card>
+          <ion-card-header>
+            {{order.productDetails}}
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-list>
+              <ion-item>
+                <ion-avatar item-start>
+                  <img src="{{order.productImage ? 'http://omoelle.com/admin/pics/'+order.productImage : 'assets/img/default_img.png' }}">
+                </ion-avatar>
+                <h2>{{order.productName}}</h2>
+                <span>Price : {{order.ProPrice}}</span>
+                <p>Quantity : {{order.quantity_s}}</p>
+              </ion-item>
+            </ion-list>
+       </ion-card-content>
+    </ion-card>
+   </div>
+
+   
+   <div class="summary-box">
+     <h4><strong>Summary</strong></h4>
+     <ion-grid>
+      <ion-row>
+        <ion-col col-6 class="left">
+          <p>Order Totle</p>
+     
+        </ion-col>
+
+        <ion-col col-6 class="right">
+          <p>{{totalAmount}}</p>
+       
+        </ion-col>
+
+      </ion-row>
+      
+    <!--   <ion-row>
+        <ion-col col-6 class="left">
+          <p>Shipping</p>
+  
+        </ion-col>
+
+        <ion-col col-6 class="right">
+          <p>0</p>
+         
+        </ion-col>
+
+      </ion-row> -->
+       
+      <div style="height: 1px;background-color: #eee;"></div>
+      <ion-row>
+        <ion-col col-6 class="left">
+          <p></p>
+          
+        </ion-col>
+
+        <ion-col col-6 class="right">
+          <p>Totle {{totalAmount}}</p>
+        </ion-col>
+
+      </ion-row>
+     
+    </ion-grid>
+   </div>
+
+     
+  </div>
+</ion-content>

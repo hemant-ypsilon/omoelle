@@ -1,0 +1,88 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+.menu-inner {
+  width: 100%;
+}
+.md .menu-inner {
+  background: rgba(0, 0, 0,0.9) none repeat scroll 0 0;
+}
+
+
+.ios .menu-inner{
+	background: rgba(0, 0, 0, 0.9) none repeat scroll 0 0;
+}
+.content-ios {
+  background-color:transparent;
+  font-family: 'Laila', serif;
+  }
+.content-md {
+  background-color: transparent;
+  color: #000;
+  font-family: 'Laila', serif;
+}
+.menu ion-item-group {
+  background-color: transparent;
+  display: block;
+  padding-left: 40px;
+  padding-top: 45px;
+}
+.item-md {
+    background-color: transparent;
+    border-bottom: medium none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.item-ios {
+    background-color: transparent;
+    border-bottom: medium none;
+    margin-left: 0;
+    padding-left: 0;
+}
+.menu .item .input-wrapper .label img {
+  width: 22px;
+}
+
+.menu .item .input-wrapper .label.label-md > span {
+       color: #e50681;
+    font-family: 'Laila', serif;
+    font-size: 22px;
+   
+    padding-left: 15px;
+}
+.menu .item .input-wrapper .label.label-ios > span {
+       color: #e50681;
+    font-family: 'Laila', serif;
+    font-size: 22px;
+    
+   
+    padding-left: 15px;
+}
+.menu .list-md .item-block .item-inner {
+  border-bottom: medium none;
+}
+.menu .list-ios .item-block .item-inner {
+  border-bottom: medium none;
+}
+.cross-btn-menu {
+  background-color: transparent!important;
+  float: right!important;
+  height: 50px!important;
+  width: 50px!important;
+}

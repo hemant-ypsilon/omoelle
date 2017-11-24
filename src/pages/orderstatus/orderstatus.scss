@@ -1,0 +1,55 @@
+page-orderstatus  {
+
+
+ font-family: 'Laila', serif;
+
+    .toolbar-background-md {
+  background: #eb429f none repeat scroll 0 0;
+  border-color: #b2b2b2;
+}
+
+    .toolbar-background-ios {
+  background: #eb429f none repeat scroll 0 0;
+  border-color: #b2b2b2;
+}
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+  background-color: transparent;
+  color: #fff;
+}
+
+ 
+.bar-button-default-ios, .bar-button-clear-ios-default, .bar-button-ios-default {
+  background-color: transparent;
+  color: #fff;
+}
+.toolbar-title-md {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: lighter;
+  padding: 0 12px;
+  font-family: 'Laila', serif;
+}
+.toolbar-title-ios {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: lighter;
+  padding: 0 12px;
+  font-family: 'Laila', serif;
+}
+  .order-detail-main-wrap{
+  text-align:center;
+  padding-top:50px;
+  }
+
+  button.signin-btn.gett_status {
+    width: 100%;
+    padding: 10px;
+    height: 44px;
+    border-radius: 3px;
+    background-color: #eb429f;
+    color: #fff;
+    font-size: 17px;
+    margin-top:40px;
+}
+}
+

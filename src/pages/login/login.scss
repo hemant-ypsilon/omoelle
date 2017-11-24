@@ -1,0 +1,101 @@
+page-login{
+     font-family: 'Laila', serif;
+     
+   .toolbar-background-md {
+  background: #eb429f none repeat scroll 0 0;
+  border-color: #b2b2b2;
+}
+
+    .toolbar-background-ios {
+  background: #eb429f none repeat scroll 0 0;
+  border-color: #b2b2b2;
+}
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+  background-color: transparent;
+  color: #fff;
+}
+
+ 
+.bar-button-default-ios, .bar-button-clear-ios-default, .bar-button-ios-default {
+  background-color: transparent;
+  color: #fff;
+}
+.toolbar-title-md {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: lighter;
+  padding: 0 12px;
+  font-family: 'Laila', serif;
+}
+.toolbar-title-ios {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: lighter;
+  padding: 0 12px;
+  font-family: 'Laila', serif;
+}
+     .login-div-box {
+		    /* background-image: url("../assets/img/login_bg.PNG"); */
+      background-color: #fff;
+		  background-size: 100% auto;
+		}
+.logo-sec {
+  padding: 75px 0 30px;
+  text-align: center;
+  width: 100%;
+}
+
+.logo-sec > img {
+  margin: auto;
+  width: 130px;
+}
+.login-form-box {
+  margin: auto;
+  width: 80%;
+}
+.login-form-box button {
+  background-color: #eb429f;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 17px;
+  padding: 12px 10px;
+  width: 100%;
+}
+
+.item-md.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner {
+  border-bottom-color: #eb429f;
+  box-shadow: none;
+}
+.list-md .item-input.item-input-has-focus:last-child, .list-md .item-input.input-has-focus:last-child {
+  border-bottom-color: #eb429f;
+  box-shadow: none;
+}
+.item-ios.item-input.item-input-has-focus .item-inner, .item-ios.item-input.input-has-focus .item-inner {
+  border-bottom-color: #eb429f;
+  box-shadow: none;
+}
+.list-ios .item-input.item-input-has-focus:last-child, .list-ios .item-input.input-has-focus:last-child {
+  border-bottom-color: #eb429f;
+  box-shadow: none;
+}
+.list-ios > .item-block:first-child {
+  border-top: medium none;
+}
+.back-button-text {
+  align-items: center;
+  display: none!important;
+}
+
+.login-form-box h4 {
+  color: gray;
+  font-size: 15px;
+  margin-top: 5px;
+  text-align: center;
+}
+.signupgolink {
+  bottom: 0;
+  color: #77669c;
+  position: relative;
+  text-align: center;
+}
+}

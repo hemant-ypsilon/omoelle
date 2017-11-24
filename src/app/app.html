@@ -1,0 +1,58 @@
+<ion-menu [content]="content" class="menu-page">
+  <ion-content>
+    <div class="menu">
+      <button  menuToggle="left" ion-button end class="cross-btn-menu">
+        <ion-icon><img src="assets/img/cross_icon.png"></ion-icon>
+      </button> 
+
+      <ion-list>
+        <ion-item-group>
+        
+          <ion-item  menuClose (click)="setHomePage()"> <img src="assets/img/home.png"><span>Home</span></ion-item>
+
+          <!-- <ion-item  menuClose (click)="setUserPage()"> <img src="assets/img/home.png"><span>User</span></ion-item> -->
+
+          <ion-item menuClose (click)="myaccount()" *ngIf=loginStatus > <img src="assets/img/updatemerchant.png"><span>My Account</span></ion-item>
+
+          <!-- <ion-item  menuClose (click)="changepass()" *ngIf=loginStatus > <img src="assets/img/changepass.png"><span>Change Password</span></ion-item> -->
+
+         <!--  <ion-item menuClose (click)= "myCart()" *ngIf=loginStatus> <img src="assets/img/myorder.png"><span>My Cart</span></ion-item> -->
+
+          <!-- <ion-item menuClose (click)= "order_history()" *ngIf=loginStatus> <img src="assets/img/product_list.png"><span>Order History</span></ion-item>
+ -->
+          <!-- <ion-item menuClose (click)="setaboutusPage()"> <img src="assets/img/about.png"><span>About Us</span></ion-item> -->
+
+
+
+
+
+          <ion-item  menuClose (click)="wizard()"  *ngIf="loginStatus && !HaveMerchant"> <img src="assets/img/updatemerchant.png"><span>Become a Merchant</span></ion-item>
+
+          <ion-item  menuClose (click)="wizard()" *ngIf="loginStatus && HaveMerchant"> <img src="assets/img/updatemerchant.png"><span>Update a Merchant</span></ion-item>
+
+          <ion-item  menuClose (click)="add_product()" *ngIf="loginStatus && HaveMerchant"> <img src="assets/img/add_product.png"><span>Add Product</span></ion-item>
+
+          <ion-item  menuClose (click)="product_list()" *ngIf="loginStatus && HaveMerchant"> <img src="assets/img/product_list.png"><span>Product List</span></ion-item>
+
+          <ion-item menuClose (click)="orderStatus()"> <img src="assets/img/orderstaus.png"><span>Order Status</span></ion-item>
+
+          <ion-item menuClose (click)="termsCondition()" *ngIf=loginStatus > <img src="assets/img/term.png"><span>Terms & Condition</span></ion-item>
+
+          <ion-item menuClose (click)="setHelpsupportPage()" *ngIf=loginStatus > <img src="assets/img/hellpsupport.png"><span>Contact Us</span></ion-item>
+
+          <ion-item menuClose (click)="loginpage()" *ngIf=!loginStatus > <img src="assets/img/hellpsupport.png"><span>Login</span></ion-item>
+
+          <ion-item menuClose (click)="signuppage()" *ngIf=!loginStatus> <img src="assets/img/hellpsupport.png"><span>Sign Up </span></ion-item>
+
+          <ion-item menuClose (click)="logout()" *ngIf=loginStatus > <img src="assets/img/logout.PNG"><span>Logout</span></ion-item>
+
+          
+        </ion-item-group>
+    </ion-list>
+    </div>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

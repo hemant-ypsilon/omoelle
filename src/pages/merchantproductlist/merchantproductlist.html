@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Product List</ion-title>
+
+    <!-- <ion-buttons end class="cart_icon_btn" (click)='movetosuMycart()'>
+      <button ion-button icon-only>
+        <ion-icon name="">
+          <img width="27px" src="assets/img/my_cart.png">
+        </ion-icon>
+        <span>{{ totalItm && totalItm.length > 0 ? totalItm : 0 }}</span>
+      </button>
+    </ion-buttons> -->
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<div class="product-list">
+  <ion-list>
+    <ion-item (click)="movetoproductdetail(product.Id)" *ngFor="let product of productList">
+      <ion-thumbnail item-start>
+        <img height="100%" width="100%" src="{{product.productImage ? 'http://omoelle.com/admin/pics/'+product.productImage : 'assets/img/default_img.png' }}">
+      </ion-thumbnail>
+      <h2 class="pro-name">{{product.productName}}</h2>
+      <h4>Code : {{product.product_code}}</h4>
+      <h4>Stock : {{product.stock}}</h4>
+      <p>{{product.productDetails}}</p>
+    </ion-item>
+
+    <ion-item   *ngIf="prodductListShow == false">
+      <h2>Product not found!</h2>
+    </ion-item>
+
+    
+</ion-list>
+
+
+</div>
+</ion-content>

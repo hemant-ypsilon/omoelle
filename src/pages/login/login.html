@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar>
+<!--     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title>Login</ion-title>
+    <ion-buttons end class="cart_icon_btn" (click)='movetosuMycart()'>
+      <button ion-button icon-only>
+        <ion-icon name="">
+          <img width="27px" src="assets/img/my_cart.png">
+        </ion-icon>
+        <span>{{ totalItm && totalItm.length > 0 ? totalItm : 0 }}</span>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-div-box">
+  <div class="logo-sec">
+    <img src="assets/img/logo.png">
+  </div>
+
+  <div class="login-form-box">
+     <form   #loginForm="ngForm">
+    <ion-list>
+
+  <ion-item>
+    <ion-label><img width="18px" src="assets/img/email.png"></ion-label>
+    <ion-input [(ngModel)]="login.uname" name="uname" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"required placeholder="Email"></ion-input>
+
+    <p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+        Email is required
+    </p>
+
+  </ion-item>
+
+  <ion-item>
+    <ion-label><img width="18px" src="assets/img/password.png"></ion-label>
+    <ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required placeholder="Password">
+    </ion-input>
+    <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+        Password is required
+    </p>
+  </ion-item>
+
+</ion-list>
+
+<div padding>
+
+  <button [disabled]="!loginForm.form.valid" (click)="loginFun()" ion-button type="submit" block>Sign In</button>
+  <h4 (click)='forgotpasslnk()' >Forgot Password?</h4>
+
+</div>
+
+ <h6 (click)="signuppage()" class="signupgolink">If you don't have an account?</h6>
+
+ </form>
+  </div>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  
+</ion-content>

@@ -1,0 +1,164 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add Product </ion-title>
+    <!-- <ion-buttons end class="cart_icon_btn">
+      <button ion-button icon-only>
+        <ion-icon name="">
+          <img width="27px" src="assets/img/my_cart.png">
+        </ion-icon>
+        <span>5</span>
+      </button>
+    </ion-buttons> -->
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+ 
+<div class="account-info-detail-form">
+  <ion-list inset>
+
+  <form   #addproductForm="ngForm">
+
+  <h4 class="head-feilds">Product Name</h4>
+  <ion-item>
+    <ion-input type="text" placeholder="Product Name" [(ngModel)]="addproduct.productName" name="productName" required></ion-input>
+  </ion-item>
+
+  <h4 class="head-feilds">Product Code</h4>
+  <ion-item>
+    <ion-input type="text" placeholder="Product Code" [(ngModel)]="addproduct.product_code" name="product_code"   required></ion-input>
+  </ion-item>
+
+  
+  <h4 class="head-feilds">Product Details</h4>
+  <ion-item class="adresss"> 
+    <ion-textarea style="height: 60px;"  type="text" placeholder="Detail" [(ngModel)]="addproduct.productDetails" name="productDetails" required></ion-textarea>
+  </ion-item>
+
+  <h4 class="head-feilds">Product Short Desc</h4>
+  <ion-item class="adresss">
+     <ion-textarea style="height: 60px;" type="text" [(ngModel)]="addproduct.productShortdesc" name="productShortdesc" required></ion-textarea>
+  </ion-item>
+
+   <div class="select-cotegorie">
+     <ion-list>
+      <ion-item>
+        <ion-label>Category</ion-label>
+        <ion-select name="categoryId" [(ngModel)]="addproduct.categoryId" (ionChange)="onSelectCategory($event)" required>
+          <ion-option value="{{category.catId}}" *ngFor=" let category of categories;">{{category.catName}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+   </div>
+
+   <div class="select-cotegorie">
+     <ion-list>
+      <ion-item>
+        <ion-label>Sub Category</ion-label>
+        <ion-select name="subCategoryId" [(ngModel)]="addproduct.subCategoryId" required>
+          <ion-option value="{{subcategory.Id}}" *ngFor="let subcategory of subCategories;">{{subcategory.subCatName}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+   </div>
+
+    <div class="select-cotegorie">
+     <ion-list>
+      <ion-item>
+        <ion-label>Brands</ion-label>
+        <ion-select name="barndId" [(ngModel)]="addproduct.barndId" required>
+          <ion-option value="{{branddata.Id}}" *ngFor="let branddata of brand;">{{branddata.brandName}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+   </div>
+
+ <!--   <div class="select-cotegorie">
+     <ion-list>
+      <ion-item>
+        <ion-label>Seller</ion-label>
+        <ion-select name="sellerId" [(ngModel)]="addproduct.sellerId">
+          <ion-option value="{{sellerdata.Id}}" *ngFor="let sellerdata of seller;">{{sellerdata.BusinessName}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+   </div> -->
+
+   <div class="togle-foryesno">
+       <ion-item>
+      <ion-label> Best Seller</ion-label>
+      <ion-toggle  checked="false" name="BestSeller" [(ngModel)]="addproduct.BestSeller"></ion-toggle>
+    </ion-item>
+   </div>
+
+   <h4 class="head-feilds">Price</h4>
+  <ion-item>
+    <ion-input type="text" placeholder="Price" name="price" [(ngModel)]="addproduct.price" required pattern="[0-9]{1,6}"></ion-input>
+  </ion-item>
+
+   <h4 class="head-feilds">Stock</h4>
+  <ion-item>
+    <ion-input type="text" placeholder="Stock"  name="stock" [(ngModel)]="addproduct.stock" required></ion-input>
+  </ion-item>
+
+   <div class="togle-foryesno">
+     <ion-item>
+      <ion-label>Feature Product</ion-label>
+      <ion-toggle  checked="false" name="featureProduct" [(ngModel)]="addproduct.featureProduct"></ion-toggle>
+    </ion-item>
+   </div>
+
+    <h4 class="head-feilds">Weight</h4>
+    <ion-item>
+      <ion-input type="text" placeholder="Weight" name="weight" [(ngModel)]="addproduct.weight" required></ion-input>
+    </ion-item>
+
+  <div class="togle-foryesno">
+     <ion-item>
+        <ion-label>Active</ion-label>
+        <ion-toggle  checked="false" name="isActive" [(ngModel)]="addproduct.isActive"></ion-toggle>
+      </ion-item>
+   </div>
+
+   <div class="togle-foryesno">
+     <ion-item>
+      <ion-label (click)="presentActionSheet()" >Upload Image</ion-label>
+    </ion-item>
+
+    <ion-thumbnail item-start *ngIf="lastImage" >
+        <img height="100px" width="100px" src="{{pathForImage(lastImage)}}">
+    </ion-thumbnail>
+
+   </div>
+
+  </form>
+
+  
+
+</ion-list>
+
+</div>
+
+
+  <div class="done-btn" padding>
+    <button  block class="signin-btn" [disabled]="!addproductForm.form.valid" (click)="addProFun()" type="submit">Submit</button>
+  </div>
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <button ion-button icon-left (click)="presentActionSheet()">
+        <ion-icon name="camera"></ion-icon>Select Image
+      </button>
+      <button ion-button icon-left (click)="uploadImage()" [disabled]="lastImage === null">
+        <ion-icon name="cloud-upload"></ion-icon>Upload
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer> -->

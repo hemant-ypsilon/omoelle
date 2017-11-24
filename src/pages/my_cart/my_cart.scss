@@ -1,0 +1,201 @@
+page-my_cart {
+      font-family: 'Laila', serif;
+
+    .toolbar-background-md {
+  background: #eb429f none repeat scroll 0 0;
+  border-color: #b2b2b2;
+}
+
+    .toolbar-background-ios {
+  background: #eb429f none repeat scroll 0 0;
+  border-color: #b2b2b2;
+}
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+  background-color: transparent;
+  color: #fff;
+}
+
+ 
+.bar-button-default-ios, .bar-button-clear-ios-default, .bar-button-ios-default {
+  background-color: transparent;
+  color: #fff;
+}
+.toolbar-title-md {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: lighter;
+  padding: 0 12px;
+  font-family: 'Laila', serif;
+}
+.toolbar-title-ios {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: lighter;
+  padding: 0 12px;
+  font-family: 'Laila', serif;
+}
+.swiper-pagination-bullet-active {
+  background: #eb429f none repeat scroll 0 0!important;
+  opacity: 1;
+}
+.swiper-pagination-bullet {
+  background: #eee none repeat scroll 0 0;
+  
+}
+.main-category-box {
+  background-color: #ededed;
+
+}
+
+ .main-category-box::after {
+  clear: both;
+  content: "";
+  display: table;
+
+}
+ 
+.content-ios {
+  background-color: #fff;
+  font-family: 'Laila', serif;
+}
+
+.cart_icon_btn{
+	position:relative;
+}
+.cart_icon_btn .button-inner > span {
+  background-color: #d03489;
+  border: 1px solid #eee;
+  border-radius: 100px;
+  font-family: verdana;
+  font-size: 10px;
+  height: 20px;
+  left: 17px;
+  padding-top: 5px;
+  position: absolute;
+  top: 0;
+  width: 20px;
+}
+.back-button-text {
+  align-items: center;
+  display: none;
+}
+
+.item-ios ion-thumbnail {
+  min-height: 60px;
+  min-width: 70px;
+}
+.item-ios ion-avatar[item-left], .item-ios ion-thumbnail[item-left], .item-ios ion-avatar[item-start], .item-ios ion-thumbnail[item-start] {
+  margin: 0 10px 9px 10px;
+}
+
+.item-md ion-avatar[item-left], .item-md ion-thumbnail[item-left], .item-md ion-avatar[item-start], .item-md ion-thumbnail[item-start] {
+  margin: 0 10px 0px;
+}
+.item-md ion-avatar[item-left], page-productlist .item-md ion-thumbnail[item-left], page-productlist .item-md ion-avatar[item-start], page-productlist .item-md ion-thumbnail[item-start] {
+  border: 1px solid #ddd!important;
+  margin: 0 10px;
+}
+ion-thumbnail {
+  border: 1px solid #eee;
+}
+.item-md ion-thumbnail {
+  height: 100px;
+  width: 80px;
+}
+.list-md .item-block .item-inner {
+  border-bottom: medium none;
+}
+.list-ios .item-block .item-inner {
+  border-bottom: medium none;
+}
+ion-item {
+  border-bottom: 1px solid #ddd!important;
+  padding: 5px 0;
+  background-color:#FCFCFE;
+  position:relative;
+}
+ .button-clear-md {
+  background-color: transparent;
+  border: 1px solid #ddd;
+  box-shadow: none;
+  color: #488aff;
+  opacity: 1;
+  
+  color:#EB429F;
+  text-transform:capitalize;
+}
+ .button-clear-ios {
+  background-color: transparent;
+  border: 1px solid #ddd;
+  box-shadow: none;
+  color: #488aff;
+  opacity: 1;
+  
+  color:#EB429F;
+  text-transform:capitalize;
+}
+.quantity-box {
+    width: 65px;
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    color:#EB429F;
+}
+ .quantity-box button {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    width: 25px;
+    height: 25px;
+    border-radius: 100px;
+    color: gray;
+}
+.product-list ion-label.label.label-md {
+    position: relative;
+}
+.product-list ion-label.label.label-ios {
+    position: relative;
+}
+.total-price-sec h4 {
+    width: 100%;
+    text-align: center;
+}
+.total-price-sec h4 .price {
+    right: 10px;
+    position: absolute;
+    color: #EB429F;
+}
+
+.Placeorder-button{
+      bottom: 0;
+    width: 100%;
+    margin: 0;
+    background-color: #D7D7D7;
+    height: 55px;
+    color: #EB459C;
+    position: fixed;
+    font-weight: bold;
+    padding: 10px 0;
+}
+.cart-btn-bottom {
+    background-color: #fff;
+    height: 80px;
+    display: inline-block;
+    width: 100%;
+}
+
+.alert-md .alert-button {
+   
+    text-transform: none!important;
+     
+}
+
+.alert-md .alert-button .button-inner {
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    text-transform: capitalize;
+}
+
+ 
+
+}

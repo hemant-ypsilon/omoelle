@@ -1,0 +1,46 @@
+<ion-header>
+ <!--  <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+   </button> -->
+
+  <ion-navbar>
+	  <button ion-button menuToggle>
+	      <ion-icon name="menu"></ion-icon>
+	   </button>
+
+     <ion-title>Transaction  Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<div class="order-detail-main-wrap" *ngIf="paymentDetail.status == '01' || paymentDetail.status == '00'" >
+
+	  <img src="assets/img/success.png"> 
+	  <h4>{{paymentDetail.message}}</h4>
+	  <h4> Your remita retrieval reference is {{paymentDetail.RRR}} </h4>
+	  <h4>Order ID: {{paymentDetail.orderId}} </h4>
+	  <h4>Date-Time: {{paymentDetail.transactiontime}} </h4>
+</div>
+
+<div class="order-detail-main-wrap" *ngIf="paymentDetail.status == '021'" >
+     
+	 <img src="assets/img/success.png"> 
+	 <h4>{{paymentDetail.message}}</h4>
+	 <h4> Remita Retrieval Reference: {{paymentDetail.RRR}}</h4>
+	 <h4>Order ID: {{paymentDetail.orderId}} </h4>
+	 <h4>Date-Time: {{paymentDetail.transactiontime}} </h4>
+</div>
+
+<div class="order-detail-main-wrap" *ngIf="paymentDetail.status == '012'" >
+	 <img src="assets/img/failed.png"> 
+	 
+	 <h4>{{paymentDetail.message}}</h4>
+	 <h4> Remita Retrieval Reference: {{paymentDetail.RRR}}</h4>
+	 <h4>Order ID: {{paymentDetail.orderId}} </h4>
+	 <h4>Date-Time: {{paymentDetail.transactiontime}} </h4>
+</div>
+
+</ion-content>

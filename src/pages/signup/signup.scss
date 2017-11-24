@@ -1,0 +1,156 @@
+page-signup {
+font-family: 'Laila', serif;
+
+.toolbar-background-md {
+  background: #eb429f none repeat scroll 0 0;
+  border-color: #b2b2b2;
+}
+
+    .toolbar-background-ios {
+  background: #eb429f none repeat scroll 0 0;
+  border-color: #b2b2b2;
+}
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+  background-color: transparent;
+  color: #fff;
+}
+
+ 
+.bar-button-default-ios, .bar-button-clear-ios-default, .bar-button-ios-default {
+  background-color: transparent;
+  color: #fff;
+}
+.toolbar-title-md {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: lighter;
+  padding: 0 12px;
+  font-family: 'Laila', serif;
+}
+.toolbar-title-ios {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: lighter;
+  padding: 0 12px;
+  font-family: 'Laila', serif;
+}
+.back-button-text-ios {
+  display: none;
+  letter-spacing: -0.01em;
+}
+
+ .login-div-box {
+      /* background-image: url("../assets/img/login_bg.PNG"); */
+      background-color: #fff;
+      background-size: 100% auto;
+    }
+.signin-btn {
+  background-color: #eb429f;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 17px;
+    padding: 12px 10px;
+    width: 100%;
+}
+.item-md, item-ios {
+background-color:transparent;
+color: #a4a4a5;
+}
+.item-md.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner {
+  border-bottom-color: #eb429f;
+  box-shadow: none;
+}
+ .logo {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.logo > img {
+  width: 130px;
+}
+.checkbox-btn .item-md.item-block .item-inner {
+  border-bottom: medium none;
+  padding-right: 8px;
+}
+.checkbox-btn .item-ios.item-block .item-inner {
+  border-bottom: medium none;
+  padding-right: 8px;
+}
+.checkbox-btn .checkbox-md-dark .checkbox-checked {
+  background-color: transparent;
+  border-color: #280475;
+}
+.checkbox-btn .checkbox-ios-dark .checkbox-checked {
+  background-color: transparent;
+  border-color: #280475;
+}
+.checkbox-btn .checkbox-md-dark .checkbox-checked .checkbox-inner {
+  border-color: #280475;
+}
+.checkbox-btn .checkbox-ios-dark .checkbox-checked .checkbox-inner {
+  border-color: #280475;
+}
+.checkbox-btn .checkbox-md .checkbox-icon {
+  height: 20px;
+  width: 20px;
+}
+.checkbox-btn .checkbox-ios .checkbox-icon {
+  height: 20px;
+  width: 20px;
+}
+.checkbox-btn .checkbox-md .checkbox-checked .checkbox-inner {
+  height: 14px;
+  left: 6px;
+}
+.checkbox-btn .checkbox-ios .checkbox-checked .checkbox-inner {
+  height: 14px;
+  left: 6px;
+}
+.checkbox-btn .item.item-md .checkbox-md {
+  margin: 9px 8px 9px 4px;
+}
+.checkbox-btn .item.item-ios .checkbox-md {
+  margin: 9px 8px 9px 4px;
+}
+.terms{color:#eb429f;}
+.agree{color:#3c3c3d;}
+.already_act{
+	 color: #77669c;
+    font-size: 15px;
+    text-align: center;
+    }
+
+.item-md.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner {
+  border-bottom-color: #eb429f;
+  box-shadow: none;
+}
+.list-md .item-input.item-input-has-focus:last-child, .list-md .item-input.input-has-focus:last-child {
+  border-bottom-color: #eb429f;
+  box-shadow: none;
+}
+.item-ios.item-input.item-input-has-focus .item-inner, .item-ios.item-input.input-has-focus .item-inner {
+  border-bottom-color: #eb429f;
+  box-shadow: none;
+}
+.list-ios .item-input.item-input-has-focus:last-child, .list-ios .item-input.input-has-focus:last-child {
+  border-bottom-color: #eb429f;
+  box-shadow: none;
+}
+.list-ios > .item-block:first-child {
+  border-top: medium none;
+}
+.signup-form {
+  margin: auto;
+  width: 80%;
+}
+.item-md {
+  padding-left: 0px;
+}
+.checkbox-btn {
+  margin: auto;
+  width: 80%;
+}
+.button-view{width:80%; margin:0 auto;}
+.checkbox-btn .agree{font-size:10.5pt;}
+.checkbox-btn .terms{font-size:10.5pt;}
+}

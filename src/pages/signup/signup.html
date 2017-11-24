@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sign Up</ion-title>
+    <ion-buttons end class="cart_icon_btn" (click)='movetosuMycart()'>
+      <button ion-button icon-only>
+        <ion-icon name="">
+          <img width="27px" src="assets/img/my_cart.png">
+        </ion-icon>
+        <span>{{ totalItm && totalItm.length > 0 ? totalItm : 0 }}</span>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-div-box">
+  <div class="bg-box">
+      <div class="logo">
+  <img src="assets/img/logo.png" />
+  </div>
+
+  <form   #signupForm="ngForm">
+    <div class="signup-form">
+        <ion-list>
+        <ion-item>
+          <ion-label>
+              <img src="assets/img/user.png" width="22px;" />
+          </ion-label>
+          <ion-input [(ngModel)]="signup.FIRSTNAME" type="text" value="" placeholder="Firstname" name="FIRSTNAME" #FIRSTNAME="ngModel" spellcheck="false" autocapitalize="off"required></ion-input>
+        </ion-item>
+
+          <ion-item>
+          <ion-label>
+              <img src="assets/img/user.png" width="22px;" />
+          </ion-label>
+          <ion-input type="text" placeholder="Lastname" [(ngModel)]="signup.LASTNAME" name="LASTNAME" #LASTNAME="ngModel" spellcheck="false" autocapitalize="off"required></ion-input>
+        </ion-item>
+
+<!--          <ion-item>
+          <ion-label>
+              <img src="assets/img/user.png" width="22px;" />
+          </ion-label>
+            <ion-input [(ngModel)]="signup.EMAIL" name="EMAIL" type="text" #EMAIL="ngModel" spellcheck="false" autocapitalize="off"required placeholder="Email"></ion-input>
+        </ion-item> -->
+
+        <ion-item>
+          <ion-label>
+              <img src="assets/img/email.png" width="22px;" />
+          </ion-label>
+            <ion-input [(ngModel)]="signup.USERNAME" name="USERNAME" type="email" #USERNAME="ngModel" spellcheck="false" autocapitalize="off"required placeholder="Email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+              <img src="assets/img/password.png" width="18px;" />
+          </ion-label>
+            <ion-input [(ngModel)]="signup.PASSWORD" name="PASSWORD" type="password" #PASSWORD="ngModel" required placeholder="Password">
+        </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+              <img src="assets/img/password.png" width="18px;" />
+          </ion-label>
+            <ion-input [(ngModel)]="signup.cpassword" name="cpassword" type="password" #cpassword="ngModel" required placeholder="Confirm Password">
+        </ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="checkbox-btn">
+      <ion-item>
+        <ion-label>
+        <span class="agree">Agree to the </span>
+        <span class="terms">terms & conditions</span>
+        </ion-label>
+        <ion-checkbox color="dark" checked="true"></ion-checkbox>
+      </ion-item>
+    </div>
+  <div padding class="button-view">
+    <button block class="signin-btn" [disabled]="!signupForm.form.valid" (click)="signupFun()" type="submit">Sign Up</button>
+  </div>
+</form>
+
+<div class="">
+  <h5 (click)='loginpage()' class="already_act">If you  have already account,Signin.</h5>
+</div>
+  </div>
+</ion-content>

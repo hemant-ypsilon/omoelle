@@ -1,0 +1,45 @@
+<ion-header>
+
+<ion-navbar>
+    <ion-title>Filter By</ion-title>
+    <ion-buttons end>
+    <button ion-button (click)="closeModal()">Close</button>
+    </ion-buttons>
+</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<h4 class="head-feilds">Brand</h4>
+ <ion-item>
+    <ion-input type="text" [(ngModel)]="filterData.brandName" #brandName="ngModel" placeholder="Choose Brand Name"  name="brandName" spellcheck="false" autocapitalize="off"></ion-input>
+  </ion-item>
+
+  <ion-grid>
+  <ion-row>
+    <ion-col col-6>
+    	<h4 class="head-feilds">Min Amount</h4>
+		 <ion-item>
+		    <ion-input type="text" [(ngModel)]="filterData.min" #min="ngModel" placeholder="Ex. 0"  name="min"
+		     spellcheck="false" autocapitalize="off" ></ion-input>
+		  </ion-item>
+	</ion-col>
+
+	<ion-col col-6>
+    	<h4 class="head-feilds">Max Amount</h4>
+		 <ion-item>
+		    <ion-input type="text" [(ngModel)]="filterData.max" #max="ngModel" placeholder="Ex. 500"  name="max"
+		     spellcheck="false" autocapitalize="off" ></ion-input>
+		  </ion-item>
+	</ion-col>
+</ion-row>
+   
+</ion-grid>
+
+  <div class="done-btn" padding>
+    <button (click)="closeModal()"  type="button">Done</button>
+  </div>
+
+
+</ion-content>

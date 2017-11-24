@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Payment Info</ion-title>
+    <!-- <ion-buttons end class="cart_icon_btn">
+      <button ion-button icon-only>
+        <ion-icon name="">
+          <img width="27px" src="assets/img/my_cart.png">
+        </ion-icon>
+        <span>5</span>
+      </button>
+    </ion-buttons> -->
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <form   #paymentForm="ngForm">
+  
+<div class="account-info-detail-form">
+  <ion-list inset>
+
+  <h4 class="head-feilds">Payer User Name</h4>
+
+  <ion-item>
+    <ion-input type="text" placeholder="User Name" disabled="true" name="FIRSTNAME"
+     [(ngModel)]="paymentdata.FIRSTNAME" #FIRSTNAME="ngModel" spellcheck="false" autocapitalize="off"required></ion-input>
+  </ion-item>
+
+  <h4 class="head-feilds">Payer Email</h4>
+  <ion-item>
+    <ion-input type="text" placeholder="Email"   name="EMAIL"
+     [(ngModel)]="paymentdata.EMAIL" #EMAIL="ngModel" spellcheck="false" autocapitalize="off"required></ion-input>
+  </ion-item>
+
+  
+  <h4 class="head-feilds">Shipping Address</h4>
+  <ion-item class="adresss"> 
+    <ion-input  type="text" placeholder="Address"  name="SHIPTOADDR"
+     [(ngModel)]="paymentdata.SHIPTOADDR" #SHIPTOADDR="ngModel" spellcheck="false" autocapitalize="off"required></ion-input>
+  </ion-item>
+
+
+
+   <h4 class="head-feilds">Payer Phone</h4>
+  <ion-item>
+    <ion-input type="text" placeholder="Phone Number"  name="HPHONE"
+     [(ngModel)]="paymentdata.HPHONE" #HPHONE="ngModel" spellcheck="false" autocapitalize="off"required></ion-input>
+  </ion-item>
+
+
+   <h4 class="head-feilds">Total Cost</h4>
+  <ion-item>
+    <ion-input type="text" placeholder="Total Amount" disabled="true" name="totalprice"
+     [(ngModel)]="paymentdata.totalprice" #totalprice="ngModel" spellcheck="false" autocapitalize="off" required></ion-input>
+  </ion-item>
+
+  <h4 class="head-feilds">Payment Type</h4>
+  <ion-item>
+    <ion-label>Select Payment Type</ion-label>
+    <ion-select name="paymentType" [(ngModel)]="paymentdata.paymentType" #paymentType="ngModel" required>
+      <ion-option value="Verve Card">Verve Card</ion-option>
+      <ion-option value="Visa">Visa</ion-option>
+      <ion-option value="MasterCard">MasterCard</ion-option>
+      <ion-option value="PocketMoni">PocketMoni</ion-option>
+      <ion-option value="POS">POS</ion-option>
+      <ion-option value="ATM">ATM</ion-option>
+      <ion-option value="BANK BRANCH">BANK BRANCH</ion-option>
+      <ion-option value="BANK INTERNET">BANK INTERNET</ion-option>
+      <ion-option value="Remita Account Transfer"> Remita Account Transfer</ion-option>
+    </ion-select>
+ 
+  </ion-item>
+
+  
+</ion-list>
+
+</div>
+
+
+  <div class="done-btn" padding>
+    <button  block [disabled]="!paymentForm.form.valid" (click)="openurl()" type="submit">Payment</button>
+  </div>
+
+</form>
+</ion-content>

@@ -1,0 +1,30 @@
+{
+  "name": "omoelleApp",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/UserLogin",
+      "proxyUrl": "http://omoelle.com/processed.php"
+    },
+    {
+      "path": "/GetCategory",
+      "proxyUrl": "http://omoelle.com/recordcat.php"
+    },
+    {
+      "path": "/GetSubCategory",
+      "proxyUrl": "http://omoelle.com/filterproduct.php"
+    },
+    {
+      "path": "/GetProduct",
+      "proxyUrl": "http://omoelle.com/recordfproduct.php"
+    },
+    {
+      "path": "/GetProductDetail",
+      "proxyUrl": "http://omoelle.com/detailsphp.php"
+    }
+  ],
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

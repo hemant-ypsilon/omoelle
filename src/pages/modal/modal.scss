@@ -1,0 +1,77 @@
+page-modal {
+ font-family: 'Laila', serif;
+
+    .toolbar-background-md {
+  background: #eb429f none repeat scroll 0 0;
+  border-color: #b2b2b2;
+}
+
+    .toolbar-background-ios {
+  background: #eb429f none repeat scroll 0 0;
+  border-color: #b2b2b2;
+}
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+  background-color: transparent;
+  color: #fff;
+}
+
+ 
+.bar-button-default-ios, .bar-button-clear-ios-default, .bar-button-ios-default {
+  background-color: transparent;
+  color: #fff;
+}
+.toolbar-title-md {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: lighter;
+  padding: 0 12px;
+  font-family: 'Laila', serif;
+}
+.toolbar-title-ios {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: lighter;
+  padding: 0 12px;
+  font-family: 'Laila', serif;
+}
+
+.content-md {
+    background-color: #fff!important;
+    color: #000;
+    font-family: 'Laila', serif;
+}
+
+.content-ios {
+    background-color: #fff!important;
+    color: #000;
+    font-family: 'Laila', serif;
+}
+
+.done-btn {
+  margin: auto;
+  width: 80%;
+}
+.done-btn > button {
+  background-color: #eb429f;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 16px;
+  height: 44px;
+  width: 100%;
+}
+.text-input-md {
+  margin: 10px 8px;
+  padding: 0;
+  width: calc(100% - 8px - 8px);
+}
+.text-input-ios {
+  margin: 10px 8px;
+  padding: 0;
+  width: calc(100% - 8px - 8px);
+}
+.head-feilds {
+  color: #2b2b2b;
+  font-size: 16px;
+  margin-top:0;
+}
+}

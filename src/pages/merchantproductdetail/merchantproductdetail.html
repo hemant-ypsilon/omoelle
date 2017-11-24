@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Product Details</ion-title>
+   <!--  <ion-buttons end class="cart_icon_btn" (click)='movetosuMycart()'>
+      <button ion-button icon-only>
+        <ion-icon name="">
+          <img width="27px" src="assets/img/my_cart.png">
+        </ion-icon>
+        <span>{{ totalItm && totalItm.length > 0 ? totalItm : 0 }}</span>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="product-details" padding *ngFor="let product of productDetail">
+    <div class="product-img">
+      <img src="{{ product.productImage ?  'http://omoelle.com/admin/pics/'+product.productImage : 'assets/img/default_img.png' }}">
+    </div>
+    <div class="product_information">
+      <h4> {{product.productName}} <!-- <span class="ml-info">(150 ml)</span> --></h4>
+      <p class="price">&#8358; {{product.price ? product.price : 00}}</p>
+
+        <p class="weight-pro">
+          {{product.weight}}
+        </p>
+      
+       <ion-card>
+            <ion-card-header style="color:#eb429f;">
+              Product Description
+            </ion-card-header>
+
+            <ion-card-content>
+              <div class="description">
+                <p>{{product.productDetails}}</p>
+              </div>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-header style="color:#eb429f;">
+              Return Policy
+            </ion-card-header>
+
+            <ion-card-content>
+              <p class="ReturnPolicy">Return Policy : {{product.return_policy}}</p>
+            </ion-card-content>
+
+        </ion-card>
+
+        <ion-card>
+
+            <ion-card-header style="color:#eb429f;">
+              Category
+            </ion-card-header>
+
+            <ion-card-content>
+              {{product.catName}}
+            </ion-card-content>
+
+        </ion-card>
+
+        <ion-card>
+
+            <ion-card-header style="color:#eb429f;">
+              Sub Category
+            </ion-card-header>
+
+            <ion-card-content>
+               {{product.subCatName}}
+            </ion-card-content>
+
+        </ion-card>
+
+        <ion-card>
+
+            <ion-card-header style="color:#eb429f;">
+              Brands
+            </ion-card-header>
+
+            <ion-card-content>
+              {{product.brandName}}
+            </ion-card-content>
+
+        </ion-card>
+
+        <ion-card> 
+
+            <ion-card-header style="color:#eb429f;">
+              Status
+            </ion-card-header>
+
+            <ion-card-content>
+               {{product.isPactive}}
+            </ion-card-content>
+
+        </ion-card>
+
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Cart</ion-title>
+     <ion-buttons end class="cart_icon_btn" (click)='movetosuMycart()'>
+      <button ion-button icon-only>
+        <ion-icon name="">
+          <img width="27px" src="assets/img/my_cart.png">
+        </ion-icon>
+        <span>{{ totalItm && totalItm.length > 0 ? totalItm : 0 }}</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<div class="product-list">
+  <ion-list padding>
+  
+     <ion-item   *ngFor="let product of productList; let i = index; ">
+      <ion-thumbnail item-start style="vertical-align: top;">
+        <img height="100%" width="100%" src="{{product.productImage ? 'http://omoelle.com/admin/pics/'+product.productImage : 'assets/img/default_img.png' }}">
+      </ion-thumbnail>
+      <h2 (click)="movetoproductdetail(product.Id)">{{product.productName}}</h2>
+      <p>&#8358; {{product.price ? product.price : 00}}</p>
+      <div class="quantity-box">
+        
+        <button style="margin-right: 3px;" clear (click)="incrementQty(product.proId, i)"><ion-icon name="add" ></ion-icon></button>{{product.quantity_s}}
+        <button clear (click)="decrementQty(product.proId, i)"><ion-icon name="remove" ></ion-icon></button>
+
+      </div>
+      
+        <button ion-button clear (click)="removeFromcart(product.proId, i)" >Remove</button>
+        <hr style="background-color: #eee;height: 1px;opacity: 0.5;">
+        <p>Weight : <span style="float: right;">{{product.weight ? product.weight : 00}}</span></p>
+        <hr style="background-color: #eee;height: 1px;opacity: 0.5;">
+        <p>Shipping : <span style="float: right;">&#8358; {{product.shipTotal ? product.shipTotal : 00}}</span></p>
+      
+    </ion-item>
+
+     <ion-item   *ngIf="dataShow == false">
+      <h2>Cart is empty</h2>
+    </ion-item>
+
+
+
+</ion-list>
+
+<div class="total-price-sec" *ngIf="getLength != '' ">
+  <h4><strong>Total : </strong><span class="price">&#8358; {{totalAmount}}</span></h4>
+</div>
+
+<div class="cart-btn-bottom" *ngIf="getLength != '' ">
+<button ion-button clear class="Placeorder-button" (click)="paymentprocess()" >Place Order</button>
+</div>
+
+</div>
+
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Product Details</ion-title>
+    <ion-buttons end class="cart_icon_btn" (click)='movetosuMycart()'>
+      <button ion-button icon-only>
+        <ion-icon name="">
+          <img width="27px" src="assets/img/my_cart.png">
+        </ion-icon>
+        <span>{{ totalItm && totalItm.length > 0 ? totalItm : 0 }}</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="product-details" padding *ngFor="let product of productDetail">
+    <div class="product-img">
+      <img src="{{ product.productImage ?  'http://omoelle.com/admin/pics/'+product.productImage : 'assets/img/default_img.png' }}">
+    </div>
+    <div class="product_information">
+      <h4> {{product.productName}} <!-- <span class="ml-info">(150 ml)</span> --></h4>
+      <p class="price">&#8358; {{product.price ? product.price : 00}}</p>
+      <p class="ReturnPolicy">Return Policy : {{product.ReturnPolicy}}</p>
+      <p class="ReturnPolicy">Sold by : {{product.BusinessName}}</p>
+
+      <div class="description">
+        <h5>Product Description</h5>
+        <p>{{product.productDetails}}</p>
+      </div>
+
+    </div>
+    <div class="btn-box">
+      <button class="btn addtocart" (click)="addToCart(product.Id, product.BestSeller, product.productId, product.productName, product.product_code, product.productDetails, product.productShortdesc,product.productImage,product.sellerId, product.Date,product.stock, product.isReturnable, product.catId, product.brandId, product.subCatId, product.price, product.weight)" >ADD TO CART</button>
+
+    </div>
+  </div>
+</ion-content>

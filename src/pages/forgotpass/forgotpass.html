@@ -1,0 +1,25 @@
+
+
+<ion-content class="login-div-box">
+  <div class="logo-sec">
+    <img src="assets/img/logo.png">
+  </div>
+  <div class="login-form-box">
+    <form   #forgotpass="ngForm">
+    <ion-list>
+
+  <ion-item>
+    <ion-label><img width="18px" src="assets/img/email.png"></ion-label>
+    <ion-input type="text" placeholder="Email" name="emailid" [(ngModel)]="forgotpassdata.emailid" #emailid="ngModel" spellcheck="false" autocapitalize="off"required></ion-input>
+  </ion-item>
+
+</ion-list>
+
+<div padding style="padding-top: 0px">
+ <button  block class="signin-btn" [disabled]="!forgotpass.form.valid" (click)="forgotPassFun()" type="submit">Send</button>
+  <h4 (click)='loginpage()' >Sign In</h4>
+  <h4 (click)='signuppage()' >Sign Up</h4>
+</div>
+</form>
+  </div>
+</ion-content>

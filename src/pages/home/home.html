@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <button *ngIf=loginStatus ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+
+    <ion-buttons end class="cart_icon_btn" (click)='movetosuMycart()'>
+      <button ion-button icon-only>
+        <ion-icon name="">
+          <img width="27px" src="assets/img/my_cart.png">
+        </ion-icon>
+        <span>{{ totalItm && totalItm.length > 0 ? totalItm : 0 }}</span>
+      </button>
+    </ion-buttons>
+
+     <ion-buttons *ngIf=!loginStatus end class="cart_icon_btn" (click)='loginpage()'>
+      <button ion-button icon-only>
+        <ion-icon name="contact">
+        </ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<div class="product-slider">
+  <ion-slides pager>
+
+  <ion-slide>
+    <img src="assets/img/sliderImages/homeIntroS1.jpg">
+  </ion-slide>
+  <ion-slide>
+    <img src="assets/img/sliderImages/homeIntroS2.jpg">
+  </ion-slide>
+  <ion-slide>
+    <img src="assets/img/sliderImages/homeIntroS3.jpg">
+  </ion-slide>
+   <ion-slide>
+    <img src="assets/img/sliderImages/homeIntroS4.jpg">
+  </ion-slide>
+   <ion-slide>
+    <img src="assets/img/sliderImages/homeIntroS5.jpg">
+  </ion-slide>
+
+
+</ion-slides>
+</div>
+<div class="main-category-box" padding>
+  <div (click)='movetosuCate(category.catId)' class="category" *ngFor="let category of categories">
+    <img src="assets/img/main{{ category.catId }}.png">
+  </div>
+
+</div>
+
+<ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  
+</ion-content>
