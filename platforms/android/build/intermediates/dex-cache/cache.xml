@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/var/www/html/omoelleApp/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="/var/www/html/omoelleApp/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.2.0_2342fa9ba3d203799b3a4accad085af579707a78.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/omoelleApp/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="/var/www/html/omoelleApp/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.2.0_9090c24243de9b4a68d3e7ee7cf981eb1789b8db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/omoelleApp/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/11.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="21160c044ba984fb2e33b833c89a496becb85cfd">
+        <dex dex="/var/www/html/omoelleApp/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-11.0.1_8a64922e19eb7c7880493f91957660d59daf10de.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/omoelleApp/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d695dc4247690369d66c022c6d18190155c61fcd">
+        <dex dex="/var/www/html/omoelleApp/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-11.0.1_3d9aab7ded630a9fcea9615cb700060b8e2973ea.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/omoelleApp/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="/var/www/html/omoelleApp/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.2.0_c8bdf2abbbe094c9abc50d14e233a8027b8dc5ee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/omoelleApp/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/11.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6178e31397c24ab1bfc09766832cdcf519621eb7">
+        <dex dex="/var/www/html/omoelleApp/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-11.0.1_fff3e746169127eb05dd98f35a0c2d863dd16f99.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/omoelleApp/platforms/android/libs/sqlite-connector.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="76169ab23a4f939925491c6fe186749da5a56ee9">
+        <dex dex="/var/www/html/omoelleApp/platforms/android/build/intermediates/pre-dexed/debug/sqlite-connector_283ee2564f411788f7cc97d2cd39a3613f4558f4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/omoelleApp/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="/var/www/html/omoelleApp/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.2.0_5a071c67a9e0c0be2c42c2e84130c516b445f753.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/omoelleApp/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/11.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e607ca6e04e85741fa979402b37eb552b811641">
+        <dex dex="/var/www/html/omoelleApp/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-location-11.0.1_cb810c9d0a3706c257ca04c05c8e64e798b778af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/omoelleApp/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="/var/www/html/omoelleApp/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.2.0_298eaa3092ebf36336a7688a35b84be85cf32059.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/soft/sdk/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="/var/www/html/omoelleApp/platforms/android/build/intermediates/pre-dexed/debug/support-annotations-25.2.0_4674aa97f01c1bdfb062ea23457d04a9039d188c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/omoelleApp/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b3e9e1cccf348601849b9f448e6c4725ff4cc19e">
+        <dex dex="/var/www/html/omoelleApp/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_70f900439c49ad67eb4cbfc6d20b8131d7022bcc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/omoelleApp/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/var/www/html/omoelleApp/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.2.0_3adf787a01b9a334699f65060ca3b65d8a5da30b.jar" />
+    </item>
+
+</items>
